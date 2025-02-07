@@ -13,15 +13,15 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0-jammy AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["blazor-app.csproj", "."]
-RUN dotnet restore "./blazor-app.csproj" -r linux-arm
+RUN dotnet restore "./blazor-app.csproj"
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "./blazor-app.csproj" -c $BUILD_CONFIGURATION -o /app/build -r linux-arm --no-source-link
+RUN dotnet build "./blazor-app.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./blazor-app.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false -r linux-arm --no-source-link
+RUN dotnet publish "./blazor-app.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 # This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
 FROM base AS final
