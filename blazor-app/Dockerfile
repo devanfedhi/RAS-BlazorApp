@@ -13,6 +13,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0-jammy AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["blazor-app.csproj", "."]
+RUN apt-get update && apt-get install -y qemu binfmt-support qemu-user-static
 RUN dotnet restore "./blazor-app.csproj"
 COPY . .
 WORKDIR "/src/."
