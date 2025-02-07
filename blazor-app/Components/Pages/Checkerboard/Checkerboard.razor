@@ -1,0 +1,102 @@
+﻿@page "/checkers"
+@rendermode InteractiveServer
+
+<h3>Checkerboard</h3>
+
+@for (int i = 0; i < 8; i++)
+{
+	int localI = i;
+	<div class="row">
+		@for (int j = 0; j < 8; j++)
+		{
+			int localJ = j;
+			var checker = blackCheckers.FirstOrDefault(n => n.Column == j && n.Row == i);
+			if (checker == null)
+			{
+				checker = whiteCheckers.FirstOrDefault(n => n.Column == j && n.Row == i);
+			}
+			bool canMoveHere = rowsPossible.Contains(i) && columnsPossible.Contains(j);
+
+
+			<div @onclick="() => { MoveChecker(localI,localJ); }" class="cell @(canMoveHere ? "active" : "")">
+				@if (checker != null)
+				{
+					<div @onclick="() => { 
+						activeChecker = checker;
+						EvaluateCheckerSpots();
+					}" 
+					class="checker @checker.Color @(checker == activeChecker ? "active" : "")"></div>
+				}
+			</div>
+		}
+	</div>
+}
+
+<p role="status">
+	@if (activeChecker != null)
+	{
+		<span>Current count: Rows - @string.Join(", ", rowsPossible) Columns - @string.Join(", ", columnsPossible)</span>
+	}
+</p>
+
+@using blazor_app.Data
+@code {
+	List<Checker> blackCheckers = new List<Checker>();
+	List<Checker> whiteCheckers = new List<Checker>();
+
+	Checker activeChecker = null;
+
+
+	protected override void OnInitialized()
+	{
+
+		for (int i = 0; i < 3; i++)
+		{
+			for (int j = (i + 1) % 2; j < 8; j += 2)
+			{
+				blackCheckers.Add(new Checker { Row = i, Column = j, Color = "black", Direction = CheckerDirection.Down });
+
+			}
+		}
+
+		for (int i = 5; i < 8; i++)
+		{
+			for (int j = (i + 1) % 2; j < 8; j += 2)
+			{
+				whiteCheckers.Add(new Checker { Row = i, Column = j, Color = "white", Direction = CheckerDirection.Up });
+			}
+		}
+
+	}
+	List<int> rowsPossible = new List<int>();
+	List<int> columnsPossible = new List<int>();
+
+	void EvaluateCheckerSpots()
+	{
+		rowsPossible.Clear();
+		columnsPossible.Clear();
+
+		if (activeChecker != null)
+		{
+			rowsPossible.Add(activeChecker.Row +
+				(1 * (activeChecker.Direction == CheckerDirection.Down ? 1 : -1)));
+			columnsPossible.Add(activeChecker.Column - 1);
+			columnsPossible.Add(activeChecker.Column + 1);
+		}
+	}
+
+	void MoveChecker(int row, int column)
+	{
+		bool canMoveHere = rowsPossible.Contains(row) && columnsPossible.Contains(column);
+
+		if (!canMoveHere) { return; }
+
+		activeChecker.Row = row;
+		activeChecker.Column = column;
+		activeChecker = null;
+
+		EvaluateCheckerSpots();
+
+	}
+
+}
