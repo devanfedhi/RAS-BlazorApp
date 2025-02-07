@@ -13,7 +13,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0-jammy AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["blazor-app.csproj", "."]
-RUN dotnet restore "./blazor-app.csproj" -r linux-arm --no-source-link
+RUN dotnet restore "./blazor-app.csproj" -r linux-arm
 COPY . .
 WORKDIR "/src/."
 RUN dotnet build "./blazor-app.csproj" -c $BUILD_CONFIGURATION -o /app/build -r linux-arm --no-source-link
