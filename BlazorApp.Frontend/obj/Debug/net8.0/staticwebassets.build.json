@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "iCyrmc/E8QnYvmARADlO98SP3gP0X1aKNQI9z6pTEEA=",
+  "Hash": "ITI4W7pRj1jB4/0LbnIqUTitrrJlyOyFo+YvSON+nyA=",
   "Source": "BlazorApp.Frontend",
   "BasePath": "_content/BlazorApp.Frontend",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "BlazorApp.Frontend\\wwwroot",
       "Source": "BlazorApp.Frontend",
-      "ContentRoot": "C:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\BlazorApp.Frontend\\wwwroot\\",
+      "ContentRoot": "c:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\BlazorApp.Frontend\\wwwroot\\",
       "BasePath": "_content/BlazorApp.Frontend",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\BlazorApp.Frontend\\obj\\Debug\\net8.0\\scopedcss\\bundle\\BlazorApp.Frontend.styles.css",
+      "Identity": "c:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\BlazorApp.Frontend\\obj\\Debug\\net8.0\\scopedcss\\bundle\\BlazorApp.Frontend.styles.css",
       "SourceId": "BlazorApp.Frontend",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\BlazorApp.Frontend\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "c:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\BlazorApp.Frontend\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/BlazorApp.Frontend",
       "RelativePath": "BlazorApp.Frontend.styles.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\BlazorApp.Frontend\\obj\\Debug\\net8.0\\scopedcss\\bundle\\BlazorApp.Frontend.styles.css"
+      "OriginalItemSpec": "c:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\BlazorApp.Frontend\\obj\\Debug\\net8.0\\scopedcss\\bundle\\BlazorApp.Frontend.styles.css"
     },
     {
-      "Identity": "C:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\BlazorApp.Frontend\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BlazorApp.Frontend.bundle.scp.css",
+      "Identity": "c:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\BlazorApp.Frontend\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BlazorApp.Frontend.bundle.scp.css",
       "SourceId": "BlazorApp.Frontend",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\BlazorApp.Frontend\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "c:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\BlazorApp.Frontend\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/BlazorApp.Frontend",
       "RelativePath": "BlazorApp.Frontend.bundle.scp.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\BlazorApp.Frontend\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BlazorApp.Frontend.bundle.scp.css"
+      "OriginalItemSpec": "c:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\BlazorApp.Frontend\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BlazorApp.Frontend.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\BlazorApp.Frontend\\wwwroot\\app.css",
+      "Identity": "c:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\BlazorApp.Frontend\\wwwroot\\app.css",
       "SourceId": "BlazorApp.Frontend",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\BlazorApp.Frontend\\wwwroot\\",
+      "ContentRoot": "c:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\BlazorApp.Frontend\\wwwroot\\",
       "BasePath": "_content/BlazorApp.Frontend",
       "RelativePath": "app.css",
       "AssetKind": "All",

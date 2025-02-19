@@ -1,11 +1,11 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\BlazorApp.Frontend\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BlazorApp.Frontend.bundle.scp.css",
+      "Id": "c:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\BlazorApp.Frontend\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BlazorApp.Frontend.bundle.scp.css",
       "PackagePath": "staticwebassets\\BlazorApp.Frontend.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\BlazorApp.Frontend\\wwwroot\\app.css",
+      "Id": "c:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\BlazorApp.Frontend\\wwwroot\\app.css",
       "PackagePath": "staticwebassets\\app.css"
     },
     {
