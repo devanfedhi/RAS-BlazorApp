@@ -1,0 +1,32 @@
+IServiceProvider
+- Transient Service Lifetime: 
+    - create new instances everytime regardless of if it is the same/different HTTP request or same/different service
+    - use the AddTransient<>() method in Program.cs
+- Scoped Service Lifetime: 
+    - if in the same HTTP request, receive the exact same instance
+    - if in a different/new HTTP request, then create and inject new instance
+    - TLDR: created once per HTTP request
+    - use the AddScoped<>() method  in Program.cs
+- Singleton Service Lifetime: <--- being used
+    - receive exact same instance during entire runtime of app regardless of HTTP request
+    - use the AddSingleton<>() method  in Program.cs
+
+Blazor Render Modes
+- Static Server-Side Rendering
+    - no interactivity
+    - great for when there is no user interaction
+- Interactive Server-Side Rendering <--- being used
+    - renders components from the Server
+    - components can process UI events via C# code
+    - UI interactions are handled over a WebSocket connection (SignalR)
+    - ideal when webassembly isn't practical for the client due to size
+- Client-Side Rendering (WebAssembly)
+    - Renders components on the client using Blazor WebAssembly
+    - components can process UI events via C# code but UI interactios are entirely handled in the browser
+    - components can function offlien once downloaded
+    - does not need server communication
+- Automatic Rendering
+    - decided at runtime
+    - initially rendered with interactice SSR
+    - but the .NET runtime and app bundle are downloaded/cached to the client in the background
+    - subsequent visits, components are rendered from the client
