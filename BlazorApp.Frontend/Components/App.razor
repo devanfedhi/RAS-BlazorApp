@@ -1,0 +1,21 @@
+﻿@* Main layout of the app, single page. You can see it realtime when inspecting element *@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/" />
+    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="BlazorApp.Frontend.styles.css" />
+    @* Used to render things into the head section of the app (such as page title) *@
+    <HeadOutlet />
+</head>
+
+<body>
+    @* Another component. Can nest components *@
+    <Routes />
+    <script src="_framework/blazor.web.js"></script>
+</body>
+
+</html>
