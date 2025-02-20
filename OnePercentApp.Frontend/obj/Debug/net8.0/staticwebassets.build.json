@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qXbm9VBIgR1aBPjUX6dUX898ymV3ek3Lu41dSJOIOOI=",
+  "Hash": "lcBCuiT8zkgtEh0nGIFLfY/GaAG3aD4TOPDBGyrC3TA=",
   "Source": "OnePercentApp.Frontend",
   "BasePath": "_content/OnePercentApp.Frontend",
   "Mode": "Default",
@@ -22,7 +22,7 @@
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\OnePercentApp.Frontend\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/OnePercentApp.Frontend",
-      "RelativePath": "OnePercentApp.Frontend.styles.css",
+      "RelativePath": "OnePercentApp.Frontend#[.{fingerprint}]?.styles.css",
       "AssetKind": "All",
       "AssetMode": "CurrentProject",
       "AssetRole": "Primary",
@@ -31,6 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
+      "Fingerprint": "pu8zxdb1kh",
+      "Integrity": "b+Ny8PUgTymicBr6v8h+FFZ69YYKgG2btFaxB5Qsodk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\OnePercentApp.Frontend\\obj\\Debug\\net8.0\\scopedcss\\bundle\\OnePercentApp.Frontend.styles.css"
@@ -41,7 +43,7 @@
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\OnePercentApp.Frontend\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/OnePercentApp.Frontend",
-      "RelativePath": "OnePercentApp.Frontend.bundle.scp.css",
+      "RelativePath": "OnePercentApp.Frontend#[.{fingerprint}]!.bundle.scp.css",
       "AssetKind": "All",
       "AssetMode": "Reference",
       "AssetRole": "Primary",
@@ -50,6 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
+      "Fingerprint": "pu8zxdb1kh",
+      "Integrity": "b+Ny8PUgTymicBr6v8h+FFZ69YYKgG2btFaxB5Qsodk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\OnePercentApp.Frontend\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\OnePercentApp.Frontend.bundle.scp.css"
@@ -60,18 +64,268 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\OnePercentApp.Frontend\\wwwroot\\",
       "BasePath": "_content/OnePercentApp.Frontend",
-      "RelativePath": "app.css",
+      "RelativePath": "app#[.{fingerprint}]?.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "9tsjre4pz5",
+      "Integrity": "Y3QRrYDjsQ+Bj4noKNSCcSRxgRtgAn0QL1o5m5BNepk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\app.css"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "app.9tsjre4pz5.css",
+      "AssetFile": "C:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\OnePercentApp.Frontend\\wwwroot\\app.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2154"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Y3QRrYDjsQ+Bj4noKNSCcSRxgRtgAn0QL1o5m5BNepk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 20 Feb 2025 04:52:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9tsjre4pz5"
+        },
+        {
+          "Name": "label",
+          "Value": "app.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Y3QRrYDjsQ+Bj4noKNSCcSRxgRtgAn0QL1o5m5BNepk="
+        }
+      ]
+    },
+    {
+      "Route": "app.css",
+      "AssetFile": "C:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\OnePercentApp.Frontend\\wwwroot\\app.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2154"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Y3QRrYDjsQ+Bj4noKNSCcSRxgRtgAn0QL1o5m5BNepk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 20 Feb 2025 04:52:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Y3QRrYDjsQ+Bj4noKNSCcSRxgRtgAn0QL1o5m5BNepk="
+        }
+      ]
+    },
+    {
+      "Route": "OnePercentApp.Frontend.bundle.scp.css",
+      "AssetFile": "C:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\OnePercentApp.Frontend\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\OnePercentApp.Frontend.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "513"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"b+Ny8PUgTymicBr6v8h+FFZ69YYKgG2btFaxB5Qsodk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 19 Feb 2025 23:08:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-b+Ny8PUgTymicBr6v8h+FFZ69YYKgG2btFaxB5Qsodk="
+        }
+      ]
+    },
+    {
+      "Route": "OnePercentApp.Frontend.pu8zxdb1kh.bundle.scp.css",
+      "AssetFile": "C:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\OnePercentApp.Frontend\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\OnePercentApp.Frontend.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "513"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"b+Ny8PUgTymicBr6v8h+FFZ69YYKgG2btFaxB5Qsodk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 19 Feb 2025 23:08:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pu8zxdb1kh"
+        },
+        {
+          "Name": "label",
+          "Value": "OnePercentApp.Frontend.bundle.scp.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-b+Ny8PUgTymicBr6v8h+FFZ69YYKgG2btFaxB5Qsodk="
+        }
+      ]
+    },
+    {
+      "Route": "OnePercentApp.Frontend.pu8zxdb1kh.styles.css",
+      "AssetFile": "C:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\OnePercentApp.Frontend\\obj\\Debug\\net8.0\\scopedcss\\bundle\\OnePercentApp.Frontend.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "513"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"b+Ny8PUgTymicBr6v8h+FFZ69YYKgG2btFaxB5Qsodk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 19 Feb 2025 23:08:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pu8zxdb1kh"
+        },
+        {
+          "Name": "label",
+          "Value": "OnePercentApp.Frontend.styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-b+Ny8PUgTymicBr6v8h+FFZ69YYKgG2btFaxB5Qsodk="
+        }
+      ]
+    },
+    {
+      "Route": "OnePercentApp.Frontend.styles.css",
+      "AssetFile": "C:\\Users\\devan\\source\\repos\\RAS-BlazorApp\\OnePercentApp.Frontend\\obj\\Debug\\net8.0\\scopedcss\\bundle\\OnePercentApp.Frontend.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "513"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"b+Ny8PUgTymicBr6v8h+FFZ69YYKgG2btFaxB5Qsodk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 19 Feb 2025 23:08:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-b+Ny8PUgTymicBr6v8h+FFZ69YYKgG2btFaxB5Qsodk="
+        }
+      ]
     }
   ]
 }

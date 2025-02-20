@@ -1,7 +1,23 @@
 ﻿@page "/"
+@using System.Security.Claims
 
-<PageTitle>Home</PageTitle>
+<PageTitle>1% Better</PageTitle>
+<div class="container mt-4 min-vh-100 d-flex flex-column">
+	<h1 class="text-primary">Let make your life 1% better, everyday</h1>
 
-<h1>Hello, world!</h1>
+	<div class="card">
+		<div class="card-body">
+			<AuthorizeView>
+				<Authorized>
+					<span>Logged in as <b>@context.User.Identity.Name</b>. <a href="/logout">Logout</a></span>
+					<span>Email: <b>@context.User.FindFirst(ClaimTypes.Email)?.Value</b></span>
+					<span>Role: <b>@context.User.FindFirst(ClaimTypes.Role)?.Value</b></span>
+				</Authorized>
 
-Welcome to your new app.
+				<NotAuthorized>
+					<span>You are not logged in. <a href="/login">Log In</a></span>
+				</NotAuthorized>
+			</AuthorizeView>
+		</div>
+	</div>
+</div>

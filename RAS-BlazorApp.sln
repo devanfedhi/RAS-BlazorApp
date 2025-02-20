@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp.Frontend", "Blazo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnePercentApp.Frontend", "OnePercentApp.Frontend\OnePercentApp.Frontend.csproj", "{BD67BF21-F517-4EE5-BBF4-122D591ABBDE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnePercent.Frontend", "OnePercent.Frontend\OnePercent.Frontend.csproj", "{D1A97896-7588-45FA-9437-6ECC7D413851}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test.test", "test.test\test.test.csproj", "{69DDCE7E-8A22-4603-A6FD-E20813480F8F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{BD67BF21-F517-4EE5-BBF4-122D591ABBDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD67BF21-F517-4EE5-BBF4-122D591ABBDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD67BF21-F517-4EE5-BBF4-122D591ABBDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1A97896-7588-45FA-9437-6ECC7D413851}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1A97896-7588-45FA-9437-6ECC7D413851}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1A97896-7588-45FA-9437-6ECC7D413851}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1A97896-7588-45FA-9437-6ECC7D413851}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69DDCE7E-8A22-4603-A6FD-E20813480F8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69DDCE7E-8A22-4603-A6FD-E20813480F8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69DDCE7E-8A22-4603-A6FD-E20813480F8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69DDCE7E-8A22-4603-A6FD-E20813480F8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
