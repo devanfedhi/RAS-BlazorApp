@@ -1,5 +1,7 @@
 ﻿@page "/dailylog"
 @using Microsoft.AspNetCore.Authorization
+@using OnePercentApp.Frontend.Data
+@inject OnePercentAppContext onePercentAppContext
 @attribute [Authorize(Roles = "Admin,User")]
 
 <PageTitle>Daily Log</PageTitle>
@@ -31,5 +33,34 @@
 </div>
 
 @code {
-    
+    private async Task ObtainLogDataAsync()
+    {
+        // @context.User.FindFirst("UserId")
+        // var log = onePercentAppContext.Logs.Include(u => u.Role).Where(x => x.UserId == Model.Email);
+        // if (user == null || user.UserPassword != Model.Password)
+        // {
+        //     errorMessage = "Invalid email or password";
+        //     return;
+        // }
+
+        // var claims = new List<Claim>
+        // {
+        //     new Claim(ClaimTypes.Name, user.UserName),
+        //     new Claim(ClaimTypes.Email, Model.Email),
+        //     new Claim(ClaimTypes.Role, user.Role.RoleName)
+        // };
+
+        // var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+        // var principal = new ClaimsPrincipal(identity);
+
+        // if (HttpContext == null)
+        // {
+        //     errorMessage = "HTTP context is null";
+        //     return;
+        // }
+        // await Http
+        // Context.SignInAsync(principal);
+        // navigationManager.NavigateTo("/");
+
+    }
 }

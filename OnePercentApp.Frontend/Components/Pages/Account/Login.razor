@@ -67,7 +67,8 @@
         }
 
         var claims = new List<Claim>
-        {
+        {   
+			new Claim("UserId", user.UserId.ToString()),
             new Claim(ClaimTypes.Name, user.UserName),
             new Claim(ClaimTypes.Email, Model.Email),
             new Claim(ClaimTypes.Role, user.Role.RoleName)

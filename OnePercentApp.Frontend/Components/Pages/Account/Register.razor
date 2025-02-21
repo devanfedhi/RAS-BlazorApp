@@ -93,6 +93,7 @@
 
         var claims = new List<Claim>
         {
+            new Claim("UserId", findUser.UserId.ToString()),
             new Claim(ClaimTypes.Name, findUser.UserName),
             new Claim(ClaimTypes.Email, findUser.UserEmail),
             new Claim(ClaimTypes.Role, findUser.Role.RoleName)
