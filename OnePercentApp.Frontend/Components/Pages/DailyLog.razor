@@ -1,0 +1,35 @@
+﻿@page "/dailylog"
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize(Roles = "Admin,User")]
+
+<PageTitle>Daily Log</PageTitle>
+
+<div class="container mt-4">
+    <h3 class="text-primary">Daily Log</h3>
+    <p class="text-secondary">test</p>
+    <div class="mt-2">
+        <a class="btn btn-primary" href="/editgame">New Game</a>
+    </div>
+    <table class="table table-striped table-bordered table-hover mt-3">
+        <thead class="table-dark">
+            <th>Id</th>
+            <th>Name</th>
+            <th>Genre</th>
+            <th class="text-end">Price</th>
+            <th>Release Date</th>
+            <th></th>
+        </thead>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+@code {
+    
+}

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OnePercentApp.Frontend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a6374c191239deed113cbc8bf95b576095f415ef")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d5d5948760003498ea0258b2711d31401683cc91")]
 [assembly: System.Reflection.AssemblyProductAttribute("OnePercentApp.Frontend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OnePercentApp.Frontend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

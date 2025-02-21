@@ -1,0 +1,115 @@
+@page "/register"
+@using OnePercentApp.Frontend.Models
+@using OnePercentApp.Frontend.Models.ViewModels
+@using OnePercentApp.Frontend.Data
+@using System.Security.Claims
+@using Microsoft.AspNetCore.Authentication
+@using Microsoft.AspNetCore.Authentication.Cookies
+@inject NavigationManager navigationManager
+@inject OnePercentAppContext onePercentAppContext
+@inject AuthenticationStateProvider authenticationStateProvider
+@* @rendermode InteractiveServer *@
+@using Microsoft.EntityFrameworkCore
+
+<PageTitle>Register</PageTitle>
+
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-5 bg-dark shadow-lg" style="width: 500px;">
+        <EditForm Model="@Model" OnValidSubmit="RegisterAsync" FormName="RegisterForm">
+            <DataAnnotationsValidator />
+            <div class="mb-3 text-center">
+                <h1 class="text-primary">Create An Account</h1>
+            </div>
+
+            <div class="mb-3">
+                <label><h5 class="text-secondary pt-3 pb-2">Name</h5></label>
+                <InputText @bind-Value="Model.Name" class="form-control" placeholder="Name"></InputText>
+                <ValidationMessage For="() => Model.Name" />
+            </div>
+
+            <div class="mb-3">
+                <label><h5 class="text-secondary pt-3 pb-2">Email</h5></label>
+                <InputText @bind-Value="Model.Email" class="form-control" placeholder="Email"></InputText>
+                <ValidationMessage For="() => Model.Email" />
+            </div>
+
+            <div class="mb-3">
+                <label><h5 class="text-secondary pt-3 pb-2">Password</h5></label>
+                <InputText @bind-Value="Model.Password" class="form-control" type="password" placeholder="Password"></InputText>
+                <ValidationMessage For="() => Model.Password" />
+            </div>
+
+            <div class="mb-3 text-center">
+                <span class="text-danger">@errorMessage</span>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary mt-4">Register</button>
+                <p class="text-light mt-3">Already have an account? <a href="/login">Login</a></p>
+
+            </div>
+
+        </EditForm>
+
+    </div>
+</div>
+
+
+@code {
+    [CascadingParameter]
+    public HttpContext? HttpContext { get; set; }
+
+    [SupplyParameterFromForm]
+    public RegisterViewModel Model { get; set; } = new();
+
+    private string? errorMessage;
+    private async Task RegisterAsync()
+    {
+        var user = onePercentAppContext.Users.Where(x => x.UserEmail == Model.Email).FirstOrDefault();
+        if (user != null)
+        {
+            errorMessage = $"Email {Model.Email} was already used for an account";
+            return;
+        }
+
+        var newUser = new User
+        {
+            UserName = Model.Name,
+            UserEmail = Model.Email,
+            UserPassword = Model.Password,
+            RoleId = 2
+
+        };
+
+        await onePercentAppContext.Users.AddAsync(newUser);
+		await onePercentAppContext.SaveChangesAsync();
+
+        var findUser = onePercentAppContext.Users.Include(u => u.Role).Where(x => x.UserEmail == Model.Email).FirstOrDefault();
+        if (findUser == null || findUser.UserPassword != Model.Password)
+        {
+            errorMessage = "Invalid email or password";
+            return;
+        }
+
+        var claims = new List<Claim>
+        {
+            new Claim(ClaimTypes.Name, findUser.UserName),
+            new Claim(ClaimTypes.Email, findUser.UserEmail),
+            new Claim(ClaimTypes.Role, findUser.Role.RoleName)
+        };
+
+        var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+        var principal = new ClaimsPrincipal(identity);
+
+        if (HttpContext == null)
+        {
+            errorMessage = "HTTP context is null";
+            return;
+        }
+        await HttpContext.SignInAsync(principal);
+        navigationManager.NavigateTo("/");
+
+    }
+    // private string alertMessage;
+
+}

@@ -3,6 +3,7 @@ using OnePercentApp.Frontend.Components;
 using Microsoft.EntityFrameworkCore;
 using OnePercentApp.Frontend.Data;
 using System.Security.Claims;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -47,6 +48,8 @@ app.UseAntiforgery();
 
 
 app.MapRazorComponents<App>()
-    .AddInteractiveServerRenderMode();
-
+.AddInteractiveServerRenderMode();
 app.Run();
+
+
+// Scaffold - DbContext "Server=DEVAN-PERSONAL\SQLEXPRESS;Database=OnePercentApp;Trusted_Connection=True;TrustServerCertificate=True;"Microsoft.EntityFrameworkCore.SqlServer - OutputDir Data - force

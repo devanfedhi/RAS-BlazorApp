@@ -1,0 +1,49 @@
+﻿@page "/profile"
+@rendermode InteractiveServer
+@inject IJSRuntime js
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize(Roles = "Admin,User")]
+@using System.Security.Claims
+
+
+
+<div class="container mt-4 min-vh-100 d-flex flex-column">
+	<h3 class="text-primary">Profile</h3>
+
+	<AuthorizeView>
+		<Authorized>
+			<button class="btn btn-outline-primary" @onclick="DisplayGreetingAlertAsync">Display</button>
+			<span class="text-light">Email: <b>@userEmail</b></span>
+			<span class="text-light">Role: <b>@userRole</b></span>
+		</Authorized>
+
+	</AuthorizeView>
+</div>
+@code {
+	[CascadingParameter]
+	private Task<AuthenticationState> authenticationStateTask{ get; set; }
+
+	private string userEmail = "";
+	private string userRole = "";
+
+	protected override async Task OnInitializedAsync()
+	{
+		await ObtainUserDataAsync();
+	}
+
+	private async Task DisplayGreetingAlertAsync()
+	{
+		var authenticationState = await authenticationStateTask;
+		var message = $"Hello {authenticationState.User.Identity.Name}";
+		await js.InvokeVoidAsync("alert", message);
+	}
+
+	private async Task ObtainUserDataAsync()
+	{
+		var authenticationState = await authenticationStateTask;
+		var user = authenticationState.User;
+
+		userEmail = user.FindFirst(ClaimTypes.Email)?.Value;
+		userRole = user.FindFirst(ClaimTypes.Role)?.Value;
+	}
+}
