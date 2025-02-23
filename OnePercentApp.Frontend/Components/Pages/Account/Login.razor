@@ -53,7 +53,11 @@
     public HttpContext? HttpContext { get; set; }
 
     [SupplyParameterFromForm]
-    public LoginViewModel Model { get; set; } = new ();
+    public LoginViewModel Model { get; set; } = new ()
+    {
+        Email = "",
+        Password = ""
+    };
 
     private string? errorMessage;
     private async Task AuthenticateAsync()

@@ -21,8 +21,13 @@
 	protected override async Task OnInitializedAsync()
 	{
 		await base.OnInitializedAsync();
-		if (HttpContext.User.Identity.IsAuthenticated)
-				{
+
+		ArgumentNullException.ThrowIfNull(HttpContext?.User);
+
+		var userIdentity = HttpContext.User.Identity;
+
+		if (userIdentity is not null)
+		{
 			await HttpContext.SignOutAsync();
 			navigationManager.NavigateTo("/login", true);
 		}

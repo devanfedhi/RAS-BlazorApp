@@ -6,13 +6,12 @@ namespace OnePercentApp.Frontend.Data;
 
 public partial class OnePercentAppContext : DbContext
 {
-    public OnePercentAppContext()
-    {
-    }
+    private IConfiguration _configuration;
 
-    public OnePercentAppContext(DbContextOptions<OnePercentAppContext> options)
+    public OnePercentAppContext(DbContextOptions<OnePercentAppContext> options, IConfiguration configuration)
         : base(options)
     {
+        _configuration = configuration;
     }
 
     public virtual DbSet<Category> Categories { get; set; }
@@ -26,8 +25,11 @@ public partial class OnePercentAppContext : DbContext
     public virtual DbSet<UserAccount> UserAccounts { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=DEVAN-PERSONAL\\SQLEXPRESS;Database=OnePercentApp;Trusted_Connection=True;TrustServerCertificate=True;");
+    {
+
+        optionsBuilder.UseSqlServer(_configuration.GetConnectionString("DefaultConnection"));
+    }
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

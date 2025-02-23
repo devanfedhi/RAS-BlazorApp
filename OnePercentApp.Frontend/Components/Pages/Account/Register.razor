@@ -60,7 +60,12 @@
     public HttpContext? HttpContext { get; set; }
 
     [SupplyParameterFromForm]
-    public RegisterViewModel Model { get; set; } = new();
+    public RegisterViewModel Model { get; set; } = new()
+    {
+        Name = "",
+        Email = "",
+		Password = ""
+    };
 
     private string? errorMessage;
     private async Task RegisterAsync()

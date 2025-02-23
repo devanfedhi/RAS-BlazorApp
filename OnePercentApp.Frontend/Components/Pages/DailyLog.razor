@@ -13,7 +13,7 @@
     <div class="mt-2">
         <a class="btn btn-primary" href="/createlog">New Log</a>
     </div>
- 
+
     <table class="table table-striped table-bordered table-hover mt-3">
         <thead class="table-dark">
             <th>Log Date</th>
@@ -22,26 +22,30 @@
             <th></th>
         </thead>
         <tbody>
-            @foreach (var log in logs)
+            @if (logs is not null)
             {
-                <tr>
-                    <td>@log.LogDate</td>
-                    <td>@log.LogTitle</td>
-                    <td>@log.LogDescription</td>
-                    <td>
-                        <div class="d-flex">
-                            <a class="btn btn-primary me-2" role="button" href="@LogUrl(log.LogId)">
-                                <i class="bi bi-pencil"></i>
-                            </a>
-                            @* <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="@GetDeleteModalId(game)"> *@
-                            @*     <i class="bi bi-x-lg"></i> *@
-                            @* </button> *@
-                        </div>
-                        @* <DeleteGame Game="@game"/> *@
-                    </td>
-                </tr>
-    
+                @foreach (var log in logs)
+                {
+                    <tr>
+                        <td>@log.LogDate</td>
+                        <td>@log.LogTitle</td>
+                        <td>@log.LogDescription</td>
+                        <td>
+                            <div class="d-flex">
+                                <a class="btn btn-primary me-2" role="button" href="@LogUrl(log.LogId)">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                                @* <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="@GetDeleteModalId(game)"> *@
+                                @*     <i class="bi bi-x-lg"></i> *@
+                                @* </button> *@
+                            </div>
+                            @* <DeleteGame Game="@game"/> *@
+                        </td>
+                    </tr>
+
+                }
             }
+            
         </tbody>
     </table>
 

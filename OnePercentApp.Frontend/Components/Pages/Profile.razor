@@ -21,7 +21,7 @@
 </div>
 @code {
 	[CascadingParameter]
-	private Task<AuthenticationState> authenticationStateTask{ get; set; }
+	private Task<AuthenticationState>? authenticationStateTask { get; set; }
 
 	private string userEmail = "";
 	private string userRole = "";
@@ -34,6 +34,7 @@
 	private async Task DisplayGreetingAlertAsync()
 	{
 		var authenticationState = await authenticationStateTask;
+		ArgumentNullException.ThrowIfNull(authenticationState.User.Identity);
 		var message = $"Hello {authenticationState.User.Identity.Name}";
 		await js.InvokeVoidAsync("alert", message);
 	}
@@ -43,7 +44,12 @@
 		var authenticationState = await authenticationStateTask;
 		var user = authenticationState.User;
 
-		userEmail = user.FindFirst(ClaimTypes.Email)?.Value;
-		userRole = user.FindFirst(ClaimTypes.Role)?.Value;
+		
+
+		userEmail = user.FindFirst(ClaimTypes.Email)?.Value ?? string.Empty;
+		userRole = user.FindFirst(ClaimTypes.Role)?.Value ?? string.Empty;
+
+
+ 
 	}
 }

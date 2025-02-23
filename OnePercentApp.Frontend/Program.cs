@@ -3,7 +3,6 @@ using OnePercentApp.Frontend.Components;
 using Microsoft.EntityFrameworkCore;
 using OnePercentApp.Frontend.Data;
 using System.Security.Claims;
-using OnePercentApp.Frontend.Clients;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using Microsoft.AspNetCore.Components.Authorization;
 

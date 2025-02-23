@@ -9,7 +9,7 @@
 		<div class="card-body">
 			<AuthorizeView>
 				<Authorized>
-					<span>Logged in as <b>@context.User.Identity.Name</b>. <a href="/logout">Logout</a></span>
+					<span>Logged in as <b>@context.User.Identity?.Name</b>. <a href="/logout">Logout</a></span>
 					<span>Email: <b>@context.User.FindFirst(ClaimTypes.Email)?.Value</b></span>
 					<span>Role: <b>@context.User.FindFirst(ClaimTypes.Role)?.Value</b></span>
 					<span>UserId: <b>@context.User.FindFirst("UserId")?.Value</b></span>
