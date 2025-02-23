@@ -1,0 +1,178 @@
+﻿@page "/createlog"
+@page "/editlog/{id:int}"
+@rendermode InteractiveServer
+@using Microsoft.AspNetCore.Authorization
+@using OnePercentApp.Frontend.Clients
+@using OnePercentApp.Frontend.Models.ViewModels
+@using OnePercentApp.Frontend.Data
+@inject OnePercentAppContext onePercentAppContext
+@attribute [Authorize(Roles = "Admin,User")]
+@inject NavigationManager navigationManager;
+@* @inject LogClient LogClient; *@
+
+
+<PageTitle>@title</PageTitle>
+
+<h3 class="text-primary">@title</h3>
+
+@if (Model is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="row">
+        <div class="col-md-4">
+            <EditForm Model="@Model" FormName="editLog" OnValidSubmit="HandleSubmitAsync" Enhance>
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+                <div class="mb-3">
+                    <label><h5 class="text-secondary pt-3 pb-2">Date</h5></label>
+                    <InputDate @bind-Value="Model.Date" class="form-control" placeholder="Date"></InputDate>
+                    <ValidationMessage For="() => Model.Date" />
+                </div>
+
+                <div class="mb-3">
+                    <label><h5 class="text-secondary pt-3 pb-2">Title</h5></label>
+                    <InputText @bind-Value="Model.Title" class="form-control" placeholder="Title"></InputText>
+                    <ValidationMessage For="() => Model.Title" />
+                </div>
+
+                <div class="mb-3">
+                    <label><h5 class="text-secondary pt-3 pb-2">Description</h5></label>
+                    <InputTextArea @bind-Value="Model.Description" class="form-control" placeholder="Description"></InputTextArea>
+                    <ValidationMessage For="() => Model.Description" />
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a role="button" class="btn btn-secondary" href="/dailylog">Cancel</a>
+            </EditForm>
+        </div>
+    </div>
+}
+
+
+
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
+
+    [Parameter]
+    // This is the Log ID
+    public int? Id { get; set; }
+
+    [SupplyParameterFromForm]
+    public LogViewModel Model { get; set; }
+
+    private string title = string.Empty;
+    private Log? existingLog;
+    private int? userId = null;
+
+    protected override async Task OnParametersSetAsync()
+    {
+
+        if (Model is not null)
+        {
+            return;
+        }
+
+        // If ID is set from the URL
+        if (Id is not null) 
+        {
+            existingLog = await onePercentAppContext.Logs.FindAsync(Id);
+
+            // Means that the log does not exist, or the userId does not match, fail silently
+            if (existingLog == null || userId != existingLog.UserId)
+            {
+                navigationManager.NavigateTo("/dailylog");
+            }
+
+
+
+            // Obtain existing log details
+            Model = new()
+                {
+                    Date = existingLog.LogDate,
+                    Title = existingLog.LogTitle,
+                    Description = existingLog.LogDescription,
+
+                };
+            title = $"Edit Log: {existingLog.LogTitle}";
+        }
+        else // Create new log
+        {
+            Model = new()
+                {
+                    Date = DateOnly.FromDateTime(DateTime.UtcNow),
+                    Title = string.Empty,
+                    Description = string.Empty,
+
+                };
+            title = $"New Log";
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetExistingUserIdAsync();
+
+
+    }
+
+    private async Task GetExistingUserIdAsync()
+    {
+        var authenticationState = await authenticationStateTask;
+        var user = authenticationState.User;
+
+        userId = Convert.ToInt32(user.FindFirst("UserId").Value);
+
+
+    }
+
+    private async Task HandleSubmitAsync()
+    {
+        ArgumentNullException.ThrowIfNull(Model);
+
+        if (Id is null)
+        {
+            await this.AddLogAsync();
+        }
+        else
+        {
+            await this.UpdateLogAsync();
+        }
+
+
+        navigationManager.NavigateTo("/dailylog");
+    }
+
+    private async Task AddLogAsync(){
+        var authenticationState = await authenticationStateTask;
+        var user = authenticationState.User;
+
+        var userId = Convert.ToInt32(user.FindFirst("UserId").Value);
+
+        var newLog = new Log
+            {
+                LogDate = Model.Date,
+                LogTitle = Model.Title,
+                LogDescription = Model.Description,
+                UserId = userId
+            };
+
+        await onePercentAppContext.Logs.AddAsync(newLog);
+        await onePercentAppContext.SaveChangesAsync();
+    }
+
+    private async Task UpdateLogAsync()
+    {
+        ArgumentNullException.ThrowIfNull(existingLog);
+
+        existingLog.LogDate = Model.Date;
+        existingLog.LogTitle = Model.Title;
+        existingLog.LogDescription = Model.Description;
+
+        await onePercentAppContext.SaveChangesAsync();
+
+    }
+}
